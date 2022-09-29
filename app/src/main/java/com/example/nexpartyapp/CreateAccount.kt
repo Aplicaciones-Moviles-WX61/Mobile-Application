@@ -5,10 +5,13 @@ import Beans.User
 import Database.AppDatabase
 import Interface.EventDao
 import Interface.UserDao
+import android.app.DatePickerDialog
 import android.content.Intent
+import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.TextView
 
@@ -18,8 +21,8 @@ class CreateAccount : AppCompatActivity() {
     var txtPassword: EditText? = null
     var txtEmail: EditText? = null
     var txtName: EditText? = null
-
     var txtUs: TextView? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,20 +32,32 @@ class CreateAccount : AppCompatActivity() {
         txtPassword = findViewById(R.id.txtPassword)
         txtEmail = findViewById(R.id.txtEmail)
         txtName = findViewById(R.id.txtName)
-
         txtUs = findViewById(R.id.txtUs)
 
         var listUsers: List<User>? = null
 
         val txtLogin = findViewById<TextView>(R.id.txtLogin)
         val btnCreateAccount = findViewById<Button>(R.id.btnCreateAccount)
-
+        val btnShowCalendar = findViewById<Button>(R.id.btnShowCalendar)
         val db: AppDatabase? = AppDatabase.getInstance(this.applicationContext)
         val dao: UserDao? = db!!.userDao()
+
+        val cal = Calendar.getInstance()
+        val year = cal.get(Calendar.YEAR)
+        val month = cal.get(Calendar.MONTH)
+        val day = cal.get(Calendar.DAY_OF_MONTH)
 
         txtLogin.setOnClickListener {
             val activate = Intent(this, Login::class.java)
             startActivity(activate)
+        }
+
+        btnShowCalendar.setOnClickListener(){
+            val datePickerDialog = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, myear, mmonth, mdayOfMonth ->
+
+                txtBirthday!!.setText(""+ mdayOfMonth +"/"+ mmonth +"/"+ myear)
+            }, year, month, day)
+            datePickerDialog.show()
         }
 
         btnCreateAccount.setOnClickListener {

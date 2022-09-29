@@ -24,19 +24,19 @@
         android:textColor="#33B5E5"
         android:textSize="25dp" />
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
         android:layout_marginTop="100dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="25dp"
-        android:textAlignment="center"
         android:text="Create a new event"
+        android:textAlignment="center"
+        android:textColor="#33B5E5"
         android:textSize="22dp"
-        android:textStyle="bold"
-        android:textColor="#33B5E5"/>
-
+        android:textStyle="bold" />
 
     <EditText
         android:layout_width="match_parent"
@@ -45,6 +45,7 @@
         android:layout_marginEnd="40dp"
         android:inputType="text"
         android:textColorHint="#33B5E5"
+        android:textColor="#33B5E5"
         android:imeOptions="actionNext"
         android:hint="Event name"
         android:textSize="15dp"
@@ -64,14 +65,23 @@
             android:backgroundTint="#DEE7E8"
             android:src="@drawable/calendar_icon"/>
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="date"
             android:textColorHint="#33B5E5"
+            android:textColor="#33B5E5"
             android:textSize="15dp"
             android:hint="Event date"
             android:id="@+id/txtEventDate"
             />
+        <Button
+            android:id="@+id/btnShowCalendar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:backgroundTint="#33B5E5"
+            android:text="->"
+            android:textSize="12dp" />
 
 
     </LinearLayout>

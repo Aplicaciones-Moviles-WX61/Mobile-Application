@@ -9,7 +9,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import Beans.Event
+import android.app.DatePickerDialog
 import android.content.Intent
+import android.icu.util.Calendar
+import android.widget.DatePicker
 
 class CreateEvent : AppCompatActivity() {
 
@@ -27,9 +30,22 @@ class CreateEvent : AppCompatActivity() {
         txtEventDate = findViewById(R.id.txtEventDate)
         val btnCreateEvent = findViewById<Button>(R.id.btnCreateEvent)
         txtRes = findViewById(R.id.txtRes)
-
+        val btnShowCalendar = findViewById<Button>(R.id.btnShowCalendar)
         val db:AppDatabase? = AppDatabase.getInstance(this.applicationContext)
         val dao:EventDao? = db!!.eventsDao()
+
+        val cal = Calendar.getInstance()
+        val year = cal.get(Calendar.YEAR)
+        val month = cal.get(Calendar.MONTH)
+        val day = cal.get(Calendar.DAY_OF_MONTH)
+
+        btnShowCalendar.setOnClickListener(){
+            val datePickerDialog = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, myear, mmonth, mdayOfMonth ->
+
+                txtEventDate!!.setText(""+ mdayOfMonth +"/"+ mmonth +"/"+ myear)
+            }, year, month, day)
+            datePickerDialog.show()
+        }
 
         btnCreateEvent.setOnClickListener {
             //creamos el evento

@@ -78,24 +78,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp">
 
         <ImageButton
+            android:id="@+id/btnCalendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#DEE7E8"
-            android:src="@drawable/calendar_icon"
-            android:id="@+id/btnCalendar"/>
+            android:orientation="horizontal"
+            android:src="@drawable/calendar_icon" />
+
         <EditText
-            android:layout_width="match_parent"
+            android:id="@+id/txtBirthday"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="date"
-            android:textColorHint="#3383E5"
-            android:textColor="#3383E5"
-            android:textSize="15dp"
             android:hint="Date of birth"
-            android:id="@+id/txtBirthday"/>
+            android:inputType="date"
+            android:textColor="#3383E5"
+            android:textColorHint="#3383E5"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btnShowCalendar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:backgroundTint="#33B5E5"
+            android:text="->"
+            android:textSize="12dp" />
 
 
     </LinearLayout>
