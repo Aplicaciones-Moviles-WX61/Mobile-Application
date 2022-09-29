@@ -26,6 +26,7 @@
         android:layout_marginBottom="25dp"
         android:textAlignment="center"
         android:text="Sign in to NextParty"
+        android:textColor="#3383E5"
         android:textSize="30dp"
         android:textStyle="bold"/>
 
@@ -36,6 +37,7 @@
         android:layout_marginEnd="40dp"
         android:inputType="text"
         android:textColorHint="#3383E5"
+        android:textColor="#3383E5"
         android:imeOptions="actionNext"
         android:drawableLeft="@drawable/user_icon"
         android:hint="Username"
@@ -48,6 +50,7 @@
         android:layout_marginEnd="40dp"
         android:inputType="textPassword"
         android:textColorHint="#3383E5"
+        android:textColor="#3383E5"
         android:imeOptions="actionNext"
         android:drawableLeft="@drawable/password_icon"
         android:hint="Password"

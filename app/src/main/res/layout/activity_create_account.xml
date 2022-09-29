@@ -27,7 +27,9 @@
         android:textAlignment="center"
         android:text="Create you account"
         android:textSize="30dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="#3383E5" />
+        />
 
     <EditText
         android:layout_width="match_parent"
@@ -36,6 +38,7 @@
         android:layout_marginEnd="40dp"
         android:inputType="text"
         android:textColorHint="#3383E5"
+        android:textColor="#3383E5"
         android:imeOptions="actionNext"
         android:drawableLeft="@drawable/user_icon"
         android:hint="Name"
@@ -49,6 +52,7 @@
         android:layout_marginEnd="40dp"
         android:inputType="text"
         android:textColorHint="#3383E5"
+        android:textColor="#3383E5"
         android:imeOptions="actionNext"
         android:drawableLeft="@drawable/mail_icon"
         android:hint="Email"
@@ -62,6 +66,7 @@
         android:layout_marginEnd="40dp"
         android:inputType="textPassword"
         android:textColorHint="#3383E5"
+        android:textColor="#3383E5"
         android:imeOptions="actionNext"
         android:drawableLeft="@drawable/password_icon"
         android:hint="Password"
@@ -87,6 +92,7 @@
             android:layout_height="wrap_content"
             android:inputType="date"
             android:textColorHint="#3383E5"
+            android:textColor="#3383E5"
             android:textSize="15dp"
             android:hint="Date of birth"
             android:id="@+id/txtBirthday"/>
